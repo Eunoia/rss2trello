@@ -1,0 +1,29 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @feed.name
+p
+  strong Url:
+  = @feed.url
+p
+  strong Interval:
+  = @feed.interval
+p
+  strong Description:
+  = @feed.description
+p
+  strong Last retrived:
+  = distance_of_time_in_words_to_now(@feed.last_retrived)
+p
+  strong List ID:
+  = @feed.list_id
+p
+  strong Owner:
+  = @feed.user.to_json
+
+= link_to 'Freshen', freshen_path(@feed)
+'|
+= link_to 'Edit', edit_feed_path(@feed)
+'|
+= link_to 'Back', feeds_path

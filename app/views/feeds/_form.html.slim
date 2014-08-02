@@ -1,0 +1,29 @@
+= form_for @feed do |f|
+  - if @feed.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@feed.errors.count, "error")} prohibited this feed from being saved:"
+      ul
+        - @feed.errors.full_messages.each do |message|
+          li = message
+  .field
+    - Trello::Board.all.each do |board|
+      h3 =board.name
+      div
+        - board.lists.each do |list|
+          / = f.radio_button("feed", "list_id", list.id)
+          input(type="radio" id="feed_list_id_#{list.id}" name="feed[list_id]" value="#{list.id}")
+          = f.label("list_id_#{list.id}", list.name)
+          br
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :interval
+    = f.number_field :interval
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions = f.submit 'Save'

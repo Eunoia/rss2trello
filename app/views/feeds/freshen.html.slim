@@ -1,0 +1,5 @@
+h1= @items[:msg]
+- @items[:items].each do |item|
+	= item.to_json
+
+= link_to "feed info", feed_path(@feed)

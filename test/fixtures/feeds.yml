@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  url: MyString
+  interval: 1
+  description: MyText
+  last_retrived: 2014-08-01 08:26:22
+
+two:
+  name: MyString
+  url: MyString
+  interval: 1
+  description: MyText
+  last_retrived: 2014-08-01 08:26:22
