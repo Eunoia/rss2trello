@@ -3,5 +3,5 @@ calculate:
   queue: cron
   class: CronTask
   args: "calculate"
-  description: Calculates stats
+  description: Download feeds then push to tello
   rails_envs: development, production, staging

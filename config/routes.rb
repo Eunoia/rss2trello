@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
   # get '/', to:'high_voltage/pages#show', page:'index'
   resources :feeds
+  authenticated :user do
+    root to: 'feeds#index', as: :authenticated_root
+  end
   get '/freshen/:id', to:"feeds#freshen", as: "freshen"
   get '/index', to:"feeds#fake_feed"
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users,
+    :controllers => {
+      :omniauth_callbacks => "users/omniauth_callbacks",
+      :registrations => "users/registrations"
+    }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
