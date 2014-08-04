@@ -31,11 +31,7 @@ class CronTask
   end
 
   def calculate
-    Sales.calculate_stats
-  end
-
-  def some_other_task
-    # logic here
+    Feed.all.each(&:push_to_trello)
   end
 
 end

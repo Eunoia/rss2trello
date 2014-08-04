@@ -8,14 +8,13 @@
 </head>
 <body>
 <h1>RSS 2 Trello </h1>
-<%- unless current_user %>
-	<h1><a href="<%= user_omniauth_authorize_path(:trello)  %>">Login!</a></h1>
-<%- end %>
 <p class="notice"><%= flash["notice"] %></p>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
-
+<%- unless current_user %>
+	<h1><a href="<%= user_omniauth_authorize_path(:trello)  %>">Get Started!</a></h1>
+<%- end %>
 </body>
 </html>

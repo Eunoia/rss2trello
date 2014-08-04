@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get '/', to:'high_voltage/pages#show', page:'index'
   resources :feeds
   get '/freshen/:id', to:"feeds#freshen", as: "freshen"
   get '/index', to:"feeds#fake_feed"
