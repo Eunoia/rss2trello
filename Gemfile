@@ -41,6 +41,7 @@ gem 'devise'
 gem 'omniauth-trello'
 gem 'ruby-trello', :require => 'trello'
 gem 'high_voltage'
+gem 'resque-scheduler'
 
 group :development do
 	gem 'pry-debugger'
